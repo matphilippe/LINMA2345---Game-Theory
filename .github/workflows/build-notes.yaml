@@ -1,10 +1,9 @@
-name: Build PDF
-run-name: ${{ github.actor }} is building the notes for LINMA2345 - Game Theory
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Build-Notes:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    container: texlive/texlive:latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -17,4 +16,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-  
