@@ -25,4 +25,3 @@ For another example, the following builds the exercises notes for the first prac
 ```bash
 docker run -v $(pwd):/sources -w /sources/exercises/APE1 texlive/texlive:latest pdflatex APE1-introduction.tex
 ```
-

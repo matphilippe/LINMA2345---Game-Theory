@@ -1,0 +1,23 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile Course Notes
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: notes/LINMA2345-notes.tex
+          work_in_root_file_dir: true
+      - name: Upload Notes
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: notes/LINMA2345-notes.pdf
+
